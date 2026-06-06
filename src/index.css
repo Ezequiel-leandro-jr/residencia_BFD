@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+
+
+@theme {
+
+  --font-heading: "Roboto", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+
+  --color-green-900: #1B5E3A;
+  --color-green-800: #2E7D4F;
+  --color-green-700: #43A46B;
+  --color-green-500: #66C48A;
+  --color-green-200: #A8E6C1;
+
+  --color-neutral-100: #F2F2F2;
+
+  --color-danger: #E74C3C;
+  --color-sand: #D9CAB3;
+
+}
+
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.heading-font {
+  font-family: var(--font-heading);
+}
+
+.body-font {
+  font-family: var(--font-body);
+}
