@@ -10,10 +10,10 @@ const data = [
 
 export default function StatusChart() {
   return (
-    <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm h-[320px] relative">
+    <div className="bg-secondary-100/70 backdrop-blur-md p-6 rounded-2xl border border-white/30 shadow-sm h-[320px] relative transition-all duration-300 hover:bg-secondary-100/90 hover:translate-y-[-4px] hover:shadow-lg">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-gray-800 font-bold text-sm">Status dos Exames</h3>
-        <span className="text-gray-300 cursor-pointer">•••</span>
+        <span className="text-gray-300 cursor-pointer hover:text-gray-500 transition-colors">•••</span>
       </div>
       
       <div className="flex items-center justify-between h-[80%]">

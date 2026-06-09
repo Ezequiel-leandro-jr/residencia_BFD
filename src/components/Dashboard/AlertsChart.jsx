@@ -10,20 +10,20 @@ const alerts = [
 
 export default function AlertsChart() {
   return (
-    <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm h-[340px] flex flex-col">
+    <div className="bg-secondary-100/70 backdrop-blur-md p-6 rounded-2xl border border-white/30 shadow-sm h-[340px] flex flex-col transition-all duration-300 hover:bg-secondary-100/90 hover:translate-y-[-4px] hover:shadow-lg">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-gray-800 font-bold text-sm">Alertas e Pendências</h3>
-        <span className="text-gray-300 cursor-pointer">•••</span>
+        <span className="text-gray-300 cursor-pointer hover:text-gray-500 transition-colors">•••</span>
       </div>
       
       <div className="flex flex-col gap-2.5 flex-1 justify-center">
         {alerts.map((alert) => (
-          <div key={alert.id} className="flex items-center justify-between p-3 bg-[#f8f9fa] rounded-xl border border-gray-50">
+          <div key={alert.id} className="flex items-center justify-between p-3 bg-white/60 rounded-xl border border-white/20 shadow-xs">
             <div className="flex items-center gap-3">
               <div className="p-1.5 bg-white rounded-full shadow-sm flex items-center justify-center">
                 {alert.icon}
               </div>
-              <span className="text-xs font-semibold text-gray-600">{alert.text}</span>
+              <span className="text-xs font-semibold text-gray-700">{alert.text}</span>
             </div>
             <span className={`text-sm font-bold pr-2 ${alert.textCol}`}>{alert.count}</span>
           </div>

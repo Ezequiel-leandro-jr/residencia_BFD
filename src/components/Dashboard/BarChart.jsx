@@ -12,16 +12,26 @@ const data = [
 
 export default function BarChart() {
   return (
-    <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm h-[340px]">
+    <div className="bg-secondary-100/70 backdrop-blur-md p-6 rounded-2xl border border-white/30 shadow-sm h-[340px] transition-all duration-300 hover:bg-secondary-100/90 hover:translate-y-[-4px] hover:shadow-lg">
       <div className="flex justify-between items-center mb-2">
         <h3 className="text-gray-800 font-bold text-sm">Tipos de Exames</h3>
-        <span className="text-gray-300 cursor-pointer">•••</span>
+        <span className="text-gray-300 cursor-pointer hover:text-gray-500 transition-colors">•••</span>
       </div>
       <ResponsiveContainer width="100%" height="85%">
-        <ReBarChart data={data} margin={{ top: 10, right: 10, left: -25, bottom: 10 }}>
-          <CartesianGrid strokeDasharray="0" vertical={false} stroke="#e5e7eb" />
-          <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#9ca3af', fontSize: 9, fontWeight: 600 }} angle={0} />
-          <YAxis axisLine={false} tickLine={false} tick={{ fill: '#9ca3af', fontSize: 11 }} domain={[0, 200]} ticks={[0, 50, 100, 150, 200]} />
+        {/* Aumentado o bottom de 10 para 25 para dar espaço para o texto inclinado não cortar na div */}
+        <ReBarChart data={data} margin={{ top: 10, right: 10, left: -25, bottom: 25 }}>
+          <CartesianGrid strokeDasharray="0" vertical={false} stroke="#e5e7eb/50" />
+          {/* Ajustes cruciais no XAxis: textAnchor="end" e angle={-15} forçam a renderização correta de todos os nomes */}
+          <XAxis 
+            dataKey="name" 
+            axisLine={false} 
+            tickLine={false} 
+            tick={{ fill: '#6b7280', fontSize: 9, fontWeight: 600 }} 
+            angle={-15}
+            textAnchor="end"
+            interval={0} 
+          />
+          <YAxis axisLine={false} tickLine={false} tick={{ fill: '#6b7280', fontSize: 11 }} domain={[0, 200]} ticks={[0, 50, 100, 150, 200]} />
           <Tooltip />
           <Bar dataKey="valor" radius={[10, 10, 0, 0]} maxBarSize={30}>
             {data.map((entry, index) => (

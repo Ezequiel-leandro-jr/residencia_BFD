@@ -13,16 +13,16 @@ const data = [
 
 export default function LineChart() {
   return (
-    <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm h-[320px]">
+    <div className="bg-secondary-100/70 backdrop-blur-md p-6 rounded-2xl border border-white/30 shadow-sm h-[320px] transition-all duration-300 hover:bg-secondary-100/90 hover:translate-y-[-4px] hover:shadow-lg">
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-gray-800 font-bold text-sm">Exames Processados por Dia</h3>
-        <span className="text-gray-300 cursor-pointer">•••</span>
+        <span className="text-gray-300 cursor-pointer hover:text-gray-500 transition-colors">•••</span>
       </div>
       <ResponsiveContainer width="100%" height="80%">
         <ReLineChart data={data} margin={{ top: 10, right: 10, left: -25, bottom: 0 }}>
-          <CartesianGrid strokeDasharray="0" vertical={false} stroke="#e5e7eb" />
-          <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#9ca3af', fontSize: 11, fontWeight: 500 }} />
-          <YAxis axisLine={false} tickLine={false} tick={{ fill: '#9ca3af', fontSize: 11 }} domain={[0, 100]} ticks={[0, 20, 40, 60, 80, 100]} />
+          <CartesianGrid strokeDasharray="0" vertical={false} stroke="#e5e7eb/50" />
+          <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#6b7280', fontSize: 11, fontWeight: 500 }} />
+          <YAxis axisLine={false} tickLine={false} tick={{ fill: '#6b7280', fontSize: 11 }} domain={[0, 100]} ticks={[0, 20, 40, 60, 80, 100]} />
           <Tooltip />
           <Line 
             type="monotone" 

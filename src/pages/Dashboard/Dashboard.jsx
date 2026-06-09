@@ -7,7 +7,7 @@ import AlertsChart from '../../components/Dashboard/AlertsChart';
 
 export default function Dashboard() {
   return (
-    <div className="p-6 bg-[#f1f3f4] min-h-screen w-full flex flex-col gap-6 font-sans">
+    <div className="p-6 transparent min-h-screen w-full flex flex-col gap-6 font-sans">
       
       {/* Linha dos KPIs Superiores */}
       <Cards />
